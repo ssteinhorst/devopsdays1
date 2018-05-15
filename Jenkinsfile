@@ -25,6 +25,10 @@ pipeline {
 			}
 		}
 
-
+		stage('Deploy to stage?') {agent none
+			step {
+				input 'Deploy to stage?'
+			}
+		}
 	}
 }
