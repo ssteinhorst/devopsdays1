@@ -16,17 +16,17 @@ pipeline {
 		}
 
 		stage('Who Am I?') { agent any
-			steps {
-				environment {
+			environment {
 					DEPLOY_VERSION = 'prod'
 				}
+			steps {
 				echo "${env.DEPLOY_VERSION}"
 				sh 'host -t TXT pgp.michaelholley.us |awk -F \'"\' \'{print $2}\' '
 			}
 		}
 
 		stage('Deploy to stage?') {agent none
-			step {
+			steps {
 				input 'Deploy to stage?'
 			}
 		}
