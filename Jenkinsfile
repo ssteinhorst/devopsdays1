@@ -3,23 +3,7 @@ pipeline {
 	environment {
 		NODE_VER = '8.1.0'
 	}
-	post {
-		success {
 
-		}
-		failure {
-
-		}
-		always {
-
-		}
-		unstable {
-
-		}
-		abort {
-
-		}
-	}
 
 	stages {
 		stage('Beginning') { agent any
